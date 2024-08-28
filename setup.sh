@@ -42,6 +42,9 @@ pip3 install -r requirements/requirements-linux-python3.txt
 make qt5py3
 python3 labelImg.py
 cd ..
+vim +"normal Go#!/bin/bash\npython labelImg/labelImg.py" +wq -- "labelimg.sh"
+vim +"normal Goalias labelimg=\"/home/minkescanor/Desktop/Tools/labelimg.sh\"" +wq -- "~/.bashrc"
+source ~/bashrc
 cd ..
 
 echo "Setup labelme":
