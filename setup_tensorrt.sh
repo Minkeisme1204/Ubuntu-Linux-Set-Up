@@ -10,8 +10,8 @@ if [[ "$user_input" == "yes" || "$user_input" == "y" ]]; then
 	sudo mv TensorRT-8.6.1.6 /usr/local/TensorRT-8.6.1
 	PATH_DNN1="export PATH=/usr/local/cuda-12.1/bin:/usr/local/TensorRT-8.6.1/bin:\$PATH"
 	PATH_DNN2="export LD_LIBRARY_PATH=/usr/local/cuda-12.1/lib64:/usr/local/TensorRT-8.6.1/lib:\$LD_LIBRARY_PATH"
-        vim +"normal Go$PATH_DNN1" +wq -- "~/.bashrc"
-	vim +"normal Go$PATH_DNN2" +wq -- "~/.bashrc"
+        echo"$PATH_DNN1">>~/.bashrc
+	echo"$PATH_DNN2">>~/.bashrc
 	source ~/.bashrc
 
 	sudo ldconfig

@@ -4,10 +4,8 @@ echo "Setup gcc"
 sudo apt-get install gcc
 
 echo "Setup Vietnamese Typing"
-sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
-sudo apt-get update
-sudo apt-get install ibus ibus-bamboo --install-recommends
-ibus restart
+sudo apt update
+sudo apt-get install ibus-unikey
 
 echo "Setup python3-pip"
 python3 --version
@@ -32,20 +30,20 @@ echo "setup wget"
 sudo apt-get install wget
 wget --version
 
-echo "Setup labelimg"
-mkdir Tools
-cd Tools
-git clone https://github.com/HumanSignal/labelImg.git
-cd labelImg
-sudo apt-get install pyqt5-dev-tools
-pip3 install -r requirements/requirements-linux-python3.txt
-make qt5py3
-python3 labelImg.py
-cd ..
-vim +"normal Go#!/bin/bash\npython labelImg/labelImg.py" +wq -- "labelimg.sh"
-vim +"normal Goalias labelimg=\"/home/minkescanor/Desktop/Tools/labelimg.sh\"" +wq -- "~/.bashrc"
-source ~/bashrc
-cd ..
+# echo "Setup labelimg"
+# mkdir Tools
+# cd Tools
+# git clone https://github.com/HumanSignal/labelImg.git
+# cd labelImg
+# sudo apt-get install pyqt5-dev-tools
+# pip3 install -r requirements/requirements-linux-python3.txt
+# make qt5py3
+# python3 labelImg.py
+# cd ..
+# echo "alias labelimg=\"python3 ~/Desktop/Tools/labelImg/labelImg.py\"">>~/.bashrc
+
+# source ~/bashrc
+# cd ..
 
 echo "Setup labelme":
 sudo apt-get install labelme 
